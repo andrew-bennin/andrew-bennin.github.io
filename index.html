@@ -4,26 +4,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <title>Pressure Drop Calculator</title>
     <script type="text/javascript" src="js/formcalculations.js"></script>
-    <link href="styles/cakeform.css" rel="stylesheet" type="text/css" />
+    <link href="styles/main.css" rel="stylesheet" type="text/css" />
 </head>
-<body onload='hideTotal()'>
+<body>
     <div id="wrap">
-        <form action="" id="cakeform" onsubmit="return false;">
-        <div>
-            <div class="cont_order">
+        <form id="pressureDropForm">
+            <div>
                <fieldset>
                 <legend>Input Data</legend>
                 <br/>
+
                 <label >Filter Dimensions</label>
                 <br/>
-                <label for='name'>Length (in)</label>
-                <input type="text" id="name" name='name' />
+
+                <label for='length'>Length (in)</label>
+                <input type="text" id="length" name='length' />
                 <br/>
-                <label for='name'>Width (in)</label>
-                <input type="text" id="name" name='name' />
+
+                <label for='width'>Width (in)</label>
+                <input type="text" id="width" name='width' />
                 <br/>
-         
-                <select id="mpr" name='mpr' onchange="calculateTotal()">
+
+                <select id="mpr" name='mpr'>
                 <option value="None">Select MPR</option>
                 <option value=.25>2800</option>
                 <option value=.23>2400/2500</option>
@@ -35,12 +37,11 @@
                 <option value=.19>1200</option>
                </select>
                 <br/>
-                <div id="totalPrice"></div>
                 
                 </fieldset>
             </div>
+            <input type='submit' id='submit' value='Submit' onclick="calculateTotal()" />
             
-            <input type='submit' id='submit' value='Calculate' onclick="calculateTotal()" />
         </div>  
        </form>
 	</div><!--End of wrap-->
